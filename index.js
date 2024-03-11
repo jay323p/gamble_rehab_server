@@ -15,6 +15,13 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.options(
+  '*',
+  cors({
+    origin: 'https://resonant-cranachan-6ad07d.netlify.app',
+    optionsSuccessStatus: 200,
+  })
+);
 
 app.use(
   cors({
