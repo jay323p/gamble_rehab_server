@@ -15,26 +15,25 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+// production === https://resonant-cranachan-6ad07d.netlify.app
+// development === http://localhost:5173
 app.options(
   '*',
   cors({
-    origin: 'https://resonant-cranachan-6ad07d.netlify.app',
+    origin: 'http://localhost:5173',
     credentials: true,
   })
 );
 
 app.use(
   cors({
-    origin: 'https://resonant-cranachan-6ad07d.netlify.app',
+    origin: 'http://localhost:5173',
     credentials: true,
   })
 );
 
 app.use(function (req, res, next) {
-  res.header(
-    'Access-Control-Allow-Origin',
-    'https://resonant-cranachan-6ad07d.netlify.app'
-  );
+  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
