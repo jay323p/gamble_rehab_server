@@ -19,7 +19,7 @@ app.options(
   '*',
   cors({
     origin: 'https://resonant-cranachan-6ad07d.netlify.app',
-    optionsSuccessStatus: 200,
+    credentials: true,
   })
 );
 
